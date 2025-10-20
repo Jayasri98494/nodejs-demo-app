@@ -20,4 +20,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: jagadeeshbabu1601/virtual-sim:latest, jagadeeshbabu1601/virtual-sim:${{ github.sha }}
+          tags: Jayasri98494/virtual-sim:latest, Jayasri98494/virtual-sim:${{ github.sha }}
