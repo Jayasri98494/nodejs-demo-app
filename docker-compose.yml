@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: jagadeeshbabu1601/virtual-sim:dev
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:password@db:5432/virtualsim
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: virtualsim
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
